@@ -1,0 +1,13 @@
+<div class="web-pages-container">
+  <div class="pages-grid">
+
+    <a *ngFor="let page of webPages" class="page-card" [href]="page.link" target="_blank" rel="noopener noreferrer">
+      <div class="card-image-container">
+        <img [src]="page.image" [alt]="page.title" class="card-image">
+      </div>
+
+      <h3 class="card-title">{{ page.title }}</h3>
+    </a>
+
+  </div>
+</div>

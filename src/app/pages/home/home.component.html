@@ -1,0 +1,47 @@
+<div class="home-container">
+  <!-- Hero Section -->
+  <section class="hero-section" id="hero">
+    <div id="lottie-bg" class="lottie-bg"></div>
+    <div class="hero-content">
+
+      <div class="hero-logo"></div>
+      <div class="scroll-indicator" (click)="scrollToContent()">
+        <div class="bounce-arrow"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Content Section -->
+  <section class="content-section" id="content">
+    <div class="back-to-hero" (click)="scrollToHero()">
+      <div class="bounce-arrow-up"></div>
+    </div>
+
+    <div class="content-container">
+      <div class="content-logo">
+        <div class="content-logo-img"></div>
+      </div>
+
+      <div class="content-text">
+        <h2>Hola, gracias por interesarte en nuestro portafolio</h2>
+        <p>Somos un pequeño Startup que reside en Orizaba/Córdoba, ofrecemos:</p>
+        <ul class="services-list">
+          <li>La realización de páginas web para tu negocio o incluso invitaciones a fiestas</li>
+          <li>Sistemas POS (Punto de venta y gestión de inventario)</li>
+          <li>Chatbots de Whatsapp</li>
+          <li>Aplicaciones móviles</li>
+        </ul>
+        <p class="contact-text">Si a usted le interesa alguno de estos servicios puede ponerse en contacto con nosotros
+          via Redes sociales:</p>
+      </div>
+    </div>
+
+    <!-- Social Buttons -->
+    <div class="social-buttons">
+      <a *ngFor="let button of socialButtons" [href]="button.link" target="_blank" rel="noopener noreferrer"
+        [class]="'social-button ' + button.icon">
+        <span>{{ button.label }}</span>
+      </a>
+    </div>
+  </section>
+</div>

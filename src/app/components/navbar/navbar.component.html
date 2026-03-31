@@ -1,0 +1,17 @@
+<nav class="navbar">
+  <div class="navbar-container">
+    <!-- Logo -->
+    <div class="navbar-logo logo-img"></div>
+
+    <!-- Navigation Items -->
+    <div class="navbar-items">
+      <a 
+        *ngFor="let item of navItems" 
+        [routerLink]="item.route"
+        [class.hidden]="!item.visible"
+        class="nav-item">
+        {{ item.label }}
+      </a>
+    </div>
+  </div>
+</nav>
