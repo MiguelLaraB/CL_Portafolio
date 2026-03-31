@@ -16,16 +16,20 @@ interface SocialButton {
   styleUrl: './home.component.css'
 })
 export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
+
   socialButtons: SocialButton[] = [
     { label: 'Instagram', icon: 'instagram', link: 'https://www.instagram.com/codigo.local/' },
     { label: 'Facebook', icon: 'facebook', link: 'https://www.facebook.com/profile.php?id=61588202047531' }
   ];
 
-  private wheelListener: any;
-  private isAnimating = false;
+  // estado global de sección
   currentSection = 0; // 0 = hero, 1 = content
+  isAnimating = false;
 
+  private wheelListener: any;
 
+  private startY = 0;
+  private endY = 0;
 
   ngAfterViewInit() {
     const container = document.getElementById('lottie-bg');
@@ -40,42 +44,52 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
       });
     }
   }
+  preventTouchMove = (event: TouchEvent) => {
+    event.preventDefault();
+  };
+
 
   ngOnInit() {
+
     setTimeout(() => {
       const hero = document.getElementById('hero');
       hero?.classList.add('section-active');
     }, 0);
 
+    // PC SCROLL
     this.wheelListener = (event: WheelEvent) => {
       event.preventDefault();
 
       if (this.isAnimating) return;
 
       if (event.deltaY > 0 && this.currentSection === 0) {
-        this.currentSection = 1;
         this.scrollToContent();
       }
 
       if (event.deltaY < 0 && this.currentSection === 1) {
-        this.currentSection = 0;
         this.scrollToHero();
       }
     };
 
+
+
     document.addEventListener('wheel', this.wheelListener, { passive: false });
 
+    document.addEventListener('touchmove', this.preventTouchMove, { passive: false });
   }
 
   ngOnDestroy() {
     if (this.wheelListener) {
       document.removeEventListener('wheel', this.wheelListener);
     }
+    document.removeEventListener('touchmove', this.preventTouchMove);
   }
 
   scrollToContent() {
     if (this.isAnimating) return;
+
     this.isAnimating = true;
+    this.currentSection = 1;
 
     const content = document.getElementById('content');
     const hero = document.getElementById('hero');
@@ -94,7 +108,9 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
 
   scrollToHero() {
     if (this.isAnimating) return;
+
     this.isAnimating = true;
+    this.currentSection = 0;
 
     const content = document.getElementById('content');
     const hero = document.getElementById('hero');
@@ -108,6 +124,33 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
       setTimeout(() => {
         this.isAnimating = false;
       }, 1200);
+    }
+  }
+
+
+  onTouchStart(event: TouchEvent) {
+    this.startY = event.touches[0].clientY;
+  }
+
+  onTouchMove(event: TouchEvent) {
+    this.endY = event.touches[0].clientY;
+  }
+
+  onTouchEnd() {
+    const diff = this.startY - this.endY;
+    const threshold = 50;
+
+    if (this.isAnimating) return;
+    if (Math.abs(diff) < threshold) return;
+
+    // swipe up
+    if (diff > 0 && this.currentSection === 0) {
+      this.scrollToContent();
+    }
+
+    // swipe down
+    if (diff < 0 && this.currentSection === 1) {
+      this.scrollToHero();
     }
   }
 }
