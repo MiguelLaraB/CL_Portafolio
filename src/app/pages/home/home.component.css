@@ -435,7 +435,7 @@
     grid-template-columns: 1fr;
     gap: 0rem;
     padding: 0 1rem;
-    padding-bottom: 120px;
+    padding-bottom: -5px;
   }
 
   .content-text {
