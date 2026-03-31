@@ -356,6 +356,11 @@
     touch-action: none;
   }
 
+  .hero-section,
+  .content-section {
+    min-height: 100dvh;
+  }
+
   html {
     scroll-behavior: smooth;
   }
@@ -369,6 +374,8 @@
   }
 
   .home-container {
+    height: 100dvh;
+    overflow: hidden;
     margin-top: 60px;
   }
 
@@ -415,7 +422,7 @@
   }
 
   .hero-content {
-    gap: 2.5rem;
+    gap: 1.5rem;
   }
 
   .content-section {
@@ -428,6 +435,7 @@
     grid-template-columns: 1fr;
     gap: 0rem;
     padding: 0 1rem;
+    padding-bottom: 120px;
   }
 
   .content-text {
