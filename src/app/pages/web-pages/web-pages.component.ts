@@ -25,21 +25,21 @@ export class WebPagesComponent {
     },
     {
       id: 2,
-      title: 'Segunda',
-      image: 'assets/web-page-2.jpg',
-      link: 'https://example.com'
+      title: 'Catálogo de Ferreteria',
+      image: 'assets/Catalogo.PNG',
+      link: 'https://cl-catalogo-landing.vercel.app/'
     },
     {
       id: 3,
-      title: 'Otra',
-      image: 'assets/web-page-3.jpg',
-      link: 'https://example.com'
+      title: 'Torneos de videojuegos',
+      image: 'assets/Torneos.PNG',
+      link: 'https://cl-torneos-landing.vercel.app/'
     },
     {
       id: 4,
-      title: 'Hola',
-      image: 'assets/web-page-4.jpg',
-      link: 'https://example.com'
+      title: 'RCP',
+      image: 'assets/RCP.PNG',
+      link: 'https://rcp-1.vercel.app/'
     }
   ];
 }
