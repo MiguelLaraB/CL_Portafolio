@@ -1,0 +1,17 @@
+<div class="web-pages-container">
+  <div class="demo-note">
+    <p class="note-header">Nota:</p>
+    <p class="note-text">Si te interesa que desarrollemos un sistema así para dispositivos móviles, contáctenos</p>
+  </div>
+  <div class="pages-grid">
+
+    <a *ngFor="let system of posSystems" class="page-card" [href]="system.link" target="_blank" rel="noopener noreferrer">
+      <div class="card-image-container">
+        <img [src]="system.image" [alt]="system.title" class="card-image">
+      </div>
+
+      <h3 class="card-title">{{ system.title }}</h3>
+    </a>
+
+  </div>
+</div>

@@ -4,12 +4,35 @@
     <div class="navbar-logo logo-img"></div>
 
     <!-- Navigation Items -->
-    <div class="navbar-items">
+    <div class="navbar-items desktop-only">
       <a 
         *ngFor="let item of navItems" 
         [routerLink]="item.route"
         [class.hidden]="!item.visible"
         class="nav-item">
+        {{ item.label }}
+      </a>
+    </div>
+
+    <!-- Mobile Menu Button -->
+    <button class="mobile-menu-button" (click)="toggleMenu()">
+      <img src="assets/menu.svg" alt="Menu">
+    </button>
+  </div>
+
+  <!-- Mobile Menu Overlay -->
+  <div class="mobile-menu" [class.open]="isMenuOpen">
+    <div class="mobile-menu-header">
+      <div class="navbar-logo logo-img small"></div>
+      <button class="close-button" (click)="closeMenu()">✕</button>
+    </div>
+    <div class="mobile-menu-items">
+      <a 
+        *ngFor="let item of navItems" 
+        [routerLink]="item.route"
+        [class.hidden]="!item.visible"
+        (click)="closeMenu()"
+        class="mobile-nav-item">
         {{ item.label }}
       </a>
     </div>

@@ -11,10 +11,20 @@ import { CommonModule } from '@angular/common';
 })
 export class NavbarComponent {
   navItems = [
-    { label: 'Páginas web', route: '/web-pages', visible: true },
     { label: 'Inicio', route: '/home', visible: true },
-    { label: 'Sistemas POS', route: '/pos-systems', visible: false },
+    { label: 'Sistemas POS', route: '/pos-systems', visible: true },
+    { label: 'Páginas web', route: '/web-pages', visible: true },
     { label: 'Chatbots', route: '/chatbots', visible: false },
     { label: 'Apps', route: '/apps', visible: false }
   ];
+
+  isMenuOpen = false;
+
+  toggleMenu() {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  closeMenu() {
+    this.isMenuOpen = false;
+  }
 }
