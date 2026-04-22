@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SocialFabComponent } from '../../components/social-fab/social-fab.component';
 
 interface WebPage {
   id: number;
@@ -11,7 +12,7 @@ interface WebPage {
 @Component({
   selector: 'app-web-pages',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, SocialFabComponent],
   templateUrl: './web-pages.component.html',
   styleUrl: './web-pages.component.css'
 })

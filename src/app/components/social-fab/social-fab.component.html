@@ -1,0 +1,13 @@
+<div class="fab-container" [class.active]="isOpen">
+  <div class="social-options">
+    <a *ngFor="let button of socialButtons" 
+       [href]="button.link" 
+       target="_blank" 
+       rel="noopener noreferrer"
+       [class]="'social-option ' + button.icon">
+    </a>
+  </div>
+  <button class="main-fab" (click)="toggleFab()" [class.rotate]="isOpen">
+    <span class="plus-icon">+</span>
+  </button>
+</div>

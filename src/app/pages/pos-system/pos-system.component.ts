@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { SocialFabComponent } from '../../components/social-fab/social-fab.component';
 
 interface PosSystem {
   id: number;
@@ -11,7 +12,7 @@ interface PosSystem {
 @Component({
   selector: 'app-pos-system',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, SocialFabComponent],
   templateUrl: './pos-system.component.html',
   styleUrl: './pos-system.component.css'
 })
