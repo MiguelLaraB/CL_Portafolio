@@ -72,7 +72,7 @@
 .mobile-menu-button img {
   width: 32px;
   height: 32px;
-  filter: invert(1);
+  filter: brightness(0) invert(1);
 }
 
 .mobile-menu {
