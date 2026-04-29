@@ -40,7 +40,7 @@ export class WebPagesComponent {
       id: 4,
       title: 'RCP',
       image: 'assets/RCP.PNG',
-      link: 'https://rcp-1.vercel.app/'
+      link: 'https://rcp-rosy.vercel.app/'
     }
   ];
 }

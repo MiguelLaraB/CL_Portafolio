@@ -1,6 +1,5 @@
-import { Component, OnInit, OnDestroy, AfterViewInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import lottie from 'lottie-web';
 
 interface SocialButton {
   label: string;
@@ -15,7 +14,7 @@ interface SocialButton {
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
 })
-export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
+export class HomeComponent implements OnInit, OnDestroy {
 
   socialButtons: SocialButton[] = [
     { label: 'Instagram', icon: 'instagram', link: 'https://www.instagram.com/codigo.local/' },
@@ -31,19 +30,6 @@ export class HomeComponent implements OnInit, OnDestroy, AfterViewInit {
   private startY = 0;
   private endY = 0;
 
-  ngAfterViewInit() {
-    const container = document.getElementById('lottie-bg');
-
-    if (container) {
-      lottie.loadAnimation({
-        container: container,
-        renderer: 'svg',
-        loop: true,
-        autoplay: true,
-        path: '../../../assets/wind.json'
-      });
-    }
-  }
   preventTouchMove = (event: TouchEvent) => {
     event.preventDefault();
   };
