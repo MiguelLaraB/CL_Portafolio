@@ -427,7 +427,7 @@
 
   .content-logo-img {
     height: 180px;
-    margin-top: 10%;
+    margin-top: 5%;
     -webkit-mask-image: linear-gradient(to top, transparent 0%, black 85%);
     mask-image: linear-gradient(to top, transparent 0%, black 85%);
   }
