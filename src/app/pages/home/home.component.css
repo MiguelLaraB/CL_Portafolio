@@ -64,7 +64,7 @@
 }
 
 .hero-logo {
-  max-width: 100%;
+  max-width: 140%;
   width: 25vw;
   height: auto;
   aspect-ratio: 1;
@@ -360,7 +360,7 @@
   }
 
   .hero-logo {
-    width: 130px;
+    width: 244px;
     top: -9%
   }
 
@@ -377,7 +377,7 @@
     height: 40px;
     position: fixed;
     bottom: 80px;
-    right: 20px;
+    right: 5px;
     z-index: 999;
   }
 
@@ -427,6 +427,9 @@
 
   .content-logo-img {
     height: 180px;
+    margin-top: 10%;
+    -webkit-mask-image: linear-gradient(to top, transparent 0%, black 85%);
+    mask-image: linear-gradient(to top, transparent 0%, black 85%);
   }
 
   .social-button {
@@ -438,7 +441,7 @@
 
 @media (max-width: 480px) {
   .hero-logo {
-    max-width: 135px;
+    max-width: 252px;
   }
 
   .content-text h2 {
