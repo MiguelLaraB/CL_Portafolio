@@ -31,7 +31,11 @@ export class HomeComponent implements OnInit, OnDestroy {
   private endY = 0;
 
   preventTouchMove = (event: TouchEvent) => {
-    event.preventDefault();
+    // Only prevent default if we are in the hero section to handle the swipe transition.
+    // In the content section, we allow natural scrolling on mobile.
+    if (this.currentSection === 0) {
+      event.preventDefault();
+    }
   };
 
 
@@ -134,9 +138,9 @@ export class HomeComponent implements OnInit, OnDestroy {
       this.scrollToContent();
     }
 
-    // swipe down
-    if (diff < 0 && this.currentSection === 1) {
-      this.scrollToHero();
-    }
+    // swipe down - Removed auto-scroll to hero on mobile as per user request
+    // if (diff < 0 && this.currentSection === 1) {
+    //   this.scrollToHero();
+    // }
   }
 }

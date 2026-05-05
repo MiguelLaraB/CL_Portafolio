@@ -328,7 +328,7 @@
   body {
     overflow: hidden;
     height: 100%;
-    touch-action: none;
+    touch-action: auto;
   }
 
   .hero-section,
@@ -395,18 +395,20 @@
 
   .content-section {
     justify-content: flex-start;
-    padding: 0.5rem;
+    padding: 2rem 1rem;
     position: relative;
-    transform: translateY(-30px);
-    padding-top: -4rem;
+    transform: translateY(0);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    height: 100dvh;
+    padding-bottom: 80px;
   }
 
   .content-container {
     grid-template-columns: 1fr;
-    gap: 0rem;
+    gap: 1rem;
     padding: 0 1rem;
-    padding-bottom: -5px;
-    margin-top: -40px;
+    margin-top: 0;
   }
 
   .content-text {
